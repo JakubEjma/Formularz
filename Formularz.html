@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <form id="registrationForm" method="post" action="Formularz_php.php">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">Imię</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Nazwisko</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="dob">Data urodzenia</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Adres email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="voivodeship">Województwo</label>
+                    <select class="form-control" id="voivodeship" name="voivodeship" required>
+                        <option value="Lubuskie">Lubuskie</option>
+                        <option value="Mazowieckie">Mazowieckie</option>
+                        <option value="Podkarpackie">Podkarpackie</option>
+                        <option value="	śląskie">Śląskie</option>
+                     
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Plec</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                        <label class="form-check-label" for="male">Mężczyzna</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                        <label class="form-check-label" for="female">Kobieta</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                        <label class="form-check-label" for="newsletter">Zgoda na newsletter</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Zarejestruj</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#registrationForm").validate();
+        });
+    </script>
+
+</body>
+
+</html>
